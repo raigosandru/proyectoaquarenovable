@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Ahorro de Agua</title>
+  <link rel="stylesheet" href="/css/calc.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="calculator-container">
+    <h1>Calculadora de Ahorro de Agua</h1>
+    <div class="input-section">
+      <label for="consumption">Consumo mensual de agua (m³):</label>
+      <input type="number" id="consumption" placeholder="Ingresa tu consumo mensual de agua" required>
+    </div>
+
+    <div class="input-section">
+      <label for="costPerM3">Valor del metro cúbico (en $):</label>
+      <input type="number" id="costPerM3" placeholder="Valor del metro cúbico" required>
+    </div>
+
+    <div class="input-section">
+      <label for="tankCapacity">Capacidad del tanque (en litros):</label>
+      <select id="tankCapacity">
+        <option value="250">250 Litros</option>
+        <option value="300">300 Litros</option>
+        <option value="500">500 Litros</option>
+        <option value="600">600 Litros</option>
+        <option value="1000">1000 Litros</option>
+        <option value="1100">1100 Litros</option>
+        <option value="2000">2000 Litros</option>
+        <option value="2200">2200 Litros</option>
+        <option value="5000">5000 Litros</option>
+        <option value="6000">6000 Litros</option>
+        <option value="8000">8000 Litros</option>
+        <option value="10000">10000 Litros</option>
+        <option value="15000">15000 Litros</option>
+      </select>
+      <p>Selecciona tu tanque, tómate tu tiempo para analizarlo</p>
+    </div>
+
+    <button onclick="calculateSavings()">Calcular Ahorros</button>
+
+    <div id="results">
+      <p id="monthlyWaterSavings"></p>
+      <p id="yearlyWaterSavings"></p>
+      <p id="monthlyMoneySavings"></p>
+      <p id="yearlyMoneySavings"></p>
+      <p id="texReco"></p>
+    </div>
+
+    <!-- Gráficos -->
+    <canvas id="waterSavingsChart"></canvas>
+    <canvas id="moneySavingsChart"></canvas>
+  </div>
+
+  <script src="/js/calc.js"></script>
+</body>
+</html>
